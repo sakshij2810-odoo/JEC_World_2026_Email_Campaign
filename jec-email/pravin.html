@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JEC World 2026 – Ingersoll</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #f0f0f0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #333;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
+      img {
+        border: 0;
+        outline: none;
+        text-decoration: none;
+      }
+      .email-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #ffffff;
+      }
+
+      /* PRE-HEADER */
+      .preheader {
+        background: #ffffff;
+        padding: 8px 16px;
+        width: 100%;
+      }
+      .preheader td {
+        font-size: 12px;
+        color: #555;
+        vertical-align: top;
+      }
+      .preheader td:last-child {
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      /* HERO */
+      .hero {
+        line-height: 0;
+        font-size: 0;
+        display: block;
+      }
+      .hero img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* LAST CALL */
+      .last-call {
+        background: #ffffff;
+        text-align: center;
+        padding: 30px 24px 20px;
+      }
+      .last-call h1 {
+        font-size: 32px;
+        font-weight: 900;
+        color: #47577c;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+      }
+      .last-call .meet-line {
+        font-size: 15px;
+        font-weight: 700;
+        color: #47577c;
+        margin-bottom: 4px;
+      }
+      .last-call .meet-line span {
+        color: #c0272d;
+      }
+      .last-call .date-line {
+        font-size: 15px;
+        font-weight: 700;
+        color: #47577c;
+        margin-bottom: 6px;
+      }
+      .last-call .hall-line {
+        font-size: 16px;
+        font-weight: 700;
+        color: #47577c;
+        margin-bottom: 4px;
+      }
+      .last-call .city-line {
+        font-size: 15px;
+        font-weight: 700;
+        color: #c0272d;
+        margin-bottom: 20px;
+      }
+      .btn-badge {
+        display: inline-block;
+        background: #47577c;
+        color: #ffffff !important;
+        text-decoration: none !important;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        padding: 14px 36px;
+        border-radius: 3px;
+        text-transform: uppercase;
+      }
+
+      /* MAP */
+      .map-section {
+        line-height: 0;
+        font-size: 0;
+      }
+      .map-section img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* PRODUCT SECTION */
+      .product-section {
+        background: #ffffff;
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .product-img-col {
+        width: 44%;
+        vertical-align: middle;
+        padding: 18px 0 18px 18px;
+      }
+      .product-img-col img {
+        width: 100%;
+        display: block;
+        height: auto;
+        border-radius: 2px;
+      }
+      .product-text-col {
+        width: 56%;
+        vertical-align: top;
+        padding: 28px 22px;
+      }
+      .product-text-col .headline {
+        font-size: 15px;
+        font-weight: 700;
+        color: #47577c;
+        line-height: 1.4;
+        margin-bottom: 18px;
+        text-align: center;
+      }
+      .product-text-col .headline .highlight {
+        color: #e74c3c;
+        font-weight: 900;
+      }
+      .product-text-col .why-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: #47577c;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .check-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .check-list li {
+        font-size: 13px;
+        color: #47577c;
+        margin-bottom: 10px;
+        padding-left: 24px;
+        position: relative;
+        line-height: 1.5;
+      }
+      .check-list li .check-icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      /* BOOK A MEETING */
+      .book-section {
+        background: #e8e8e8;
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .book-label-col {
+        width: 38%;
+        vertical-align: middle;
+        font-size: 15px;
+        font-weight: 700;
+        color: #47577c;
+        line-height: 1.5;
+        padding: 20px 20px 20px 40px;
+      }
+      .book-btns-col {
+        width: 62%;
+        vertical-align: middle;
+        padding: 20px;
+      }
+      .btn-eu {
+        display: block;
+        background: #c0272d;
+        color: #ffffff !important;
+        text-decoration: none !important;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        padding: 14px 10px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .btn-usa {
+        display: block;
+        background: #47577c;
+        color: #ffffff !important;
+        text-decoration: none !important;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        padding: 14px 10px;
+        border-radius: 3px;
+        text-transform: uppercase;
+      }
+
+      /* FOOTER */
+      .footer {
+        background: #ffffff;
+        text-align: center;
+        padding: 28px 24px 20px;
+        border-top: 1px solid #e8e8e8;
+      }
+      .footer .closing {
+        font-size: 15px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 12px;
+      }
+      .footer .camozzi-text {
+        font-size: 12px;
+        color: #555;
+        font-style: italic;
+        line-height: 1.5;
+        margin-bottom: 16px;
+      }
+      .social-icons {
+        margin-bottom: 16px;
+      }
+      .social-icons a {
+        display: inline-block;
+        margin: 0 4px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        line-height: 32px;
+        text-align: center;
+        font-size: 15px;
+        text-decoration: none !important;
+      }
+      .social-linkedin {
+        background: #0077b5;
+        color: #fff !important;
+      }
+      .social-website {
+        background: #47577c;
+        color: #fff !important;
+      }
+      .social-youtube {
+        background: #ff0000;
+        color: #fff !important;
+      }
+      .footer-address {
+        font-size: 12px;
+        color: #555;
+        line-height: 1.8;
+      }
+      .footer-address a {
+        color: #47577c;
+      }
+
+      /* UNSUBSCRIBE */
+      .unsub-bar {
+        background: #f0f0f0;
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 11px;
+        color: #888;
+      }
+      .unsub-bar a {
+        color: #888;
+      }
+
+      /* RESPONSIVE STYLES */
+      @media only screen and (max-width: 600px) {
+        .email-wrapper {
+          width: 100% !important;
+        }
+
+        .preheader td {
+          display: block !important;
+          width: 100% !important;
+          text-align: center !important;
+          padding: 4px 0 !important;
+        }
+        .preheader td:last-child {
+          text-align: center !important;
+        }
+
+        .last-call {
+          padding: 24px 16px 16px !important;
+        }
+        .last-call h1 {
+          font-size: 26px !important;
+        }
+        .btn-badge {
+          padding: 12px 24px !important;
+          font-size: 12px !important;
+        }
+
+        /* Stack product section */
+        .product-section,
+        .product-section tbody,
+        .product-section tr {
+          display: block !important;
+          width: 100% !important;
+        }
+        .product-img-col,
+        .product-text-col {
+          display: block !important;
+          width: 100% !important;
+          padding: 16px !important;
+        }
+        .product-img-col {
+          text-align: center !important;
+        }
+        .product-img-col img {
+          max-width: 280px !important;
+          margin: 0 auto !important;
+        }
+        .product-text-col .headline {
+          text-align: center !important;
+        }
+        .product-text-col .why-title {
+          text-align: center !important;
+        }
+
+        /* Stack book section */
+        .book-section,
+        .book-section tbody,
+        .book-section tr {
+          display: block !important;
+          width: 100% !important;
+        }
+        .book-label-col,
+        .book-btns-col {
+          display: block !important;
+          width: 100% !important;
+          text-align: center !important;
+          padding: 16px 20px !important;
+        }
+        .book-label-col {
+          padding-bottom: 8px !important;
+        }
+        .book-btns-col {
+          padding-top: 8px !important;
+        }
+
+        .footer {
+          padding: 20px 16px !important;
+        }
+        .footer .camozzi-text br {
+          display: none;
+        }
+      }
+
+      @media only screen and (max-width: 400px) {
+        .last-call h1 {
+          font-size: 22px !important;
+        }
+        .last-call .meet-line,
+        .last-call .date-line,
+        .last-call .city-line {
+          font-size: 13px !important;
+        }
+        .btn-badge {
+          padding: 10px 20px !important;
+          font-size: 11px !important;
+        }
+        .product-text-col .headline {
+          font-size: 14px !important;
+        }
+        .check-list li {
+          font-size: 12px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-wrapper">
+      <!-- PRE-HEADER -->
+      <table class="preheader" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td>See You at JEC 2026? Ingersoll is ready to welcome you</td>
+          <td>No images? <a href="#">Click here</a></td>
+        </tr>
+      </table>
+
+      <!-- HERO -->
+      <div class="hero">
+        <img
+          src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69a949d07a0d9f0c247f58f7_for%20email%20temp.png"
+          alt="JEC World 2026 Hero Banner"
+        />
+      </div>
+
+      <!-- LAST CALL -->
+      <div class="last-call">
+        <h1>LAST CALL!</h1>
+        <p class="meet-line">MEET ADDCOMPOSITES AT <span>JEC WORLD!</span></p>
+        <p class="date-line">MARCH 10-12, 2026</p>
+        <p class="hall-line">📍 HALL 6 – BOOTH 6H04-11</p>
+        <p class="city-line">Paris Nord Villepinte</p>
+        <a
+          href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ23Bg1XIRxB5csJ8nGkL4vKrAVWUK5cQykU2xWxaSNmIKDSbc_9XGu_VagR4EyYGpSIhp2ZndIo"
+          class="btn-badge"
+          target="_blank"
+          >BOOK A MEETING</a
+        >
+      </div>
+
+      <!-- MAP IMAGE -->
+      <div class="map-section">
+        <img
+          src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69a94768f10ec00bcb92707f_final%20map%202.png"
+          alt="JEC World 2026 Hall Map — Hall 6 BOOTH 6H04-11"
+        />
+      </div>
+
+      <!-- PRODUCT SECTION -->
+      <table
+        class="product-section"
+        cellpadding="0"
+        cellspacing="0"
+        width="100%"
+      >
+        <tr>
+          <td class="product-img-col">
+            <img
+              src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69a9475fb0b54c9d621654fe_second%20placeholder3.png"
+              alt="Ingersoll Orion composite manufacturing system"
+            />
+          </td>
+          <td class="product-text-col">
+            <p class="headline">
+              Our
+              <span class="highlight">Advanced Composite Manufacturing</span
+              ><br />
+              solutions cover the full
+              <strong>COMPOSITE<br />MANUFACTURING</strong> process
+            </p>
+            <p class="why-title"><span>📌</span> Why visit us?</p>
+            <ul class="check-list">
+              <li>
+                <span class="check-icon">✅</span>Exclusive systems on display
+              </li>
+              <li>
+                <span class="check-icon">✅</span>1-to-1 Meeting with our
+                founders team
+              </li>
+              <li>
+                <span class="check-icon">✅</span>See our
+                <strong>Advanced Composite Manufacturing solution</strong> in
+                action and explore tailored solutions
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+      <!-- BOOK A MEETING -->
+      <table class="book-section" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td class="book-label-col">Book a Meeting<br />with our experts</td>
+          <td class="book-btns-col">
+            <a
+              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ23Bg1XIRxB5csJ8nGkL4vKrAVWUK5cQykU2xWxaSNmIKDSbc_9XGu_VagR4EyYGpSIhp2ZndIo"
+              class="btn-eu"
+              target="_blank"
+              >Book a Meeting</a
+            >
+          </td>
+        </tr>
+      </table>
+
+      <!-- FOOTER -->
+      <div class="footer">
+        <p class="closing">We can't wait to meet you soon!</p>
+        <p class="camozzi-text">
+          There are many ways to keep updated about the Camozzi world.<br />
+          Learn more about us:
+        </p>
+        <div class="social-icons">
+          <a
+            href="https://www.linkedin.com/company/addcomposites/posts/?feedView=all"
+            class="social-linkedin"
+            title="LinkedIn"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a
+            href="https://www.addcomposites.com/"
+            class="social-website"
+            title="Website"
+            ><i class="fas fa-globe"></i
+          ></a>
+          <a
+            href="https://www.youtube.com/channel/UCB3iWRinSyWeK1HLADTKAbQ"
+            class="social-youtube"
+            title="YouTube"
+            ><i class="fab fa-youtube"></i
+          ></a>
+        </div>
+        <div class="footer-address">
+          Addcomposites Oy<br />
+          Sähkömiehentie<br />
+          4E, 02150 Espoo, Finland<br />
+          Tel. : +358 (0)503 305 201<br />
+          <a href="mailto:info@addcomposites.com">info@addcomposites.com</a
+          ><br />
+          <a href="https://www.addcomposites.com/" target="_blank"
+            >www.addcomposites.com</a
+          >
+        </div>
+      </div>
+
+      <!-- UNSUBSCRIBE -->
+      <div class="unsub-bar"><a href="#">Unsubscribe</a></div>
+    </div>
+  </body>
+</html>
