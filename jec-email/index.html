@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JEC World 2026 – Ingersoll</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #f0f0f0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #333;
+      }
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
+      .email-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #ffffff;
+      }
+
+      /* PRE-HEADER */
+      .preheader {
+        background: #ffffff;
+        padding: 8px 16px;
+        display: table;
+        width: 100%;
+      }
+      .preheader td {
+        font-size: 12px;
+        color: #555;
+        vertical-align: top;
+      }
+      .preheader td:last-child {
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      /* FIX 1 — HERO: full-width image, zero gaps */
+      .hero {
+        line-height: 0;
+        font-size: 0;
+        display: block;
+      }
+      .hero img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* LAST CALL */
+      .last-call {
+        background: #ffffff;
+        text-align: center;
+        padding: 30px 24px 20px;
+      }
+      .last-call h1 {
+        font-size: 32px;
+        font-weight: 900;
+        color: #47577c;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+      }
+      .last-call .meet-line {
+        font-size: 15px;
+        font-weight: 700;
+        color: #47577c;
+        margin-bottom: 4px;
+      }
+      .last-call .meet-line span {
+        color: #c0272d;
+      }
+      .last-call .date-line {
+        font-size: 15px;
+        font-weight: 700;
+        color: #47577c;
+        margin-bottom: 6px;
+      }
+      .last-call .hall-line {
+        font-size: 16px;
+        font-weight: 700;
+        color: #47577c;
+        margin-bottom: 4px;
+      }
+      .last-call .city-line {
+        font-size: 15px;
+        font-weight: 700;
+        color: #c0272d;
+        margin-bottom: 20px;
+      }
+      .btn-badge {
+        display: inline-block;
+        background: #47577c;
+        color: #ffffff !important;
+        text-decoration: none !important;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        padding: 14px 36px;
+        border-radius: 3px;
+        text-transform: uppercase;
+      }
+
+      /* MAP */
+      .map-section {
+        line-height: 0;
+        font-size: 0;
+      }
+      .map-section img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* FIX 2 — PRODUCT: top-bottom padding on image cell */
+      .product-section {
+        background: #ffffff;
+        display: table;
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .product-img-col {
+        display: table-cell;
+        width: 44%;
+        vertical-align: middle;
+        padding: 18px 0 18px 18px; /* top+bottom space around img3 */
+      }
+      .product-img-col img {
+        width: 100%;
+        display: block;
+        height: auto;
+        border-radius: 2px;
+      }
+      .product-text-col {
+        display: table-cell;
+        width: 56%;
+        vertical-align: middle;
+        padding: 28px 22px;
+      }
+      .product-text-col .headline {
+        font-size: 15px;
+        font-weight: 700;
+        color: #444;
+        line-height: 1.4;
+        margin-bottom: 18px;
+      }
+      .product-text-col .headline .highlight {
+        color: #e74c3c;
+        font-weight: 900;
+      }
+      .product-text-col .why-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .check-list {
+        list-style: none;
+        padding: 0;
+      }
+      .check-list li {
+        font-size: 13px;
+        color: #333;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        line-height: 1.4;
+      }
+      .check-list li .check-icon {
+        flex-shrink: 0;
+      }
+
+      /* FIX 3 — BOOK A MEETING: generous padding */
+      .book-section {
+        background: #e8e8e8;
+        display: table;
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .book-label-col {
+        display: table-cell;
+        width: 38%;
+        vertical-align: middle;
+        font-size: 15px;
+        font-weight: 700;
+        color: #47577c;
+        line-height: 1.5;
+        padding-right: 20px;
+      }
+      .book-btns-col {
+        display: table-cell;
+        width: 62%;
+        vertical-align: middle;
+      }
+      .btn-eu {
+        display: block;
+        background: #c0272d;
+        color: #ffffff !important;
+        text-decoration: none !important;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        padding: 14px 10px;
+        border-radius: 3px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .btn-usa {
+        display: block;
+        background: #47577c;
+        color: #ffffff !important;
+        text-decoration: none !important;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        padding: 14px 10px;
+        border-radius: 3px;
+        text-transform: uppercase;
+      }
+
+      /* FOOTER */
+      .footer {
+        background: #ffffff;
+        text-align: center;
+        padding: 28px 24px 20px;
+        border-top: 1px solid #e8e8e8;
+      }
+      .footer .closing {
+        font-size: 15px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 12px;
+      }
+      .footer .camozzi-text {
+        font-size: 12px;
+        color: #555;
+        font-style: italic;
+        line-height: 1.5;
+        margin-bottom: 16px;
+      }
+      .social-icons {
+        margin-bottom: 16px;
+      }
+      .social-icons a {
+        display: inline-block;
+        margin: 0 4px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        line-height: 32px;
+        text-align: center;
+        font-size: 15px;
+        text-decoration: none !important;
+      }
+      .social-linkedin {
+        background: #0077b5;
+        color: #fff !important;
+      }
+      .social-spotify {
+        background: #1ed760;
+        color: #fff !important;
+      }
+      .social-youtube {
+        background: #ff0000;
+        color: #fff !important;
+      }
+      .footer-address {
+        font-size: 12px;
+        color: #555;
+        line-height: 1.8;
+      }
+      .footer-address a {
+        color: #47577c;
+      }
+
+      /* UNSUBSCRIBE */
+      .unsub-bar {
+        background: #f0f0f0;
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 11px;
+        color: #888;
+      }
+      .unsub-bar a {
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-wrapper">
+      <!-- PRE-HEADER -->
+      <table class="preheader" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td>See You at JEC 2026? Ingersoll is ready to welcome you</td>
+          <td>No images? <a href="#">Click here</a></td>
+        </tr>
+      </table>
+
+      <!-- FIX 1: HERO — true full-width, no cropping -->
+      <div class="hero">
+        <img
+          src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69a938f5d59ba55504142ebf_1.jpg"
+          alt="JEC World 2026 Hero Banner"
+        />
+      </div>
+
+      <!-- LAST CALL -->
+      <div class="last-call">
+        <h1>LAST CALL!</h1>
+        <p class="meet-line">MEET INGERSOLL AT <span>JEC WORLD!</span></p>
+        <p class="date-line">MARCH 10-12, 2026</p>
+        <p class="hall-line">📍 HALL 6 – BOOTH Q72</p>
+        <p class="city-line">Paris Nord Villepinte</p>
+        <a href="#" class="btn-badge">CLICK HERE FOR YOUR FREE BADGE</a>
+      </div>
+
+      <!-- MAP IMAGE -->
+      <div class="map-section">
+        <img
+          src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69a938f57cab85fd317e192b_2.jpg"
+          alt="JEC World 2026 Hall Map — Hall 6 Booth Q72"
+        />
+      </div>
+
+      <!-- FIX 2: PRODUCT — img3 has 18px top+bottom padding in its cell -->
+      <table
+        class="product-section"
+        cellpadding="0"
+        cellspacing="0"
+        width="100%"
+      >
+        <tr>
+          <td class="product-img-col">
+            <img
+              src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69a938f5feb04d614bed349b_3.jpg"
+              alt="Ingersoll Orion composite manufacturing system"
+            />
+          </td>
+          <td class="product-text-col">
+            <p class="headline">
+              Our <span class="highlight">ALL-IN-ONE</span> solutions cover the
+              full <strong>COMPOSITE MANUFACTURING</strong> process
+            </p>
+            <p class="why-title"><span>📌</span> Why visit us?</p>
+            <ul class="check-list">
+              <li><span class="check-icon">✅</span> Exclusive live demos</li>
+              <li>
+                <span class="check-icon">✅</span> 1to1 Meeting with our sales
+              </li>
+              <li>
+                <span class="check-icon">✅</span> See our
+                <strong>ALL-IN-ONE Technologies</strong> in action and explore
+                tailored solutions
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+      <!-- FIX 3: BOOK A MEETING — padding: 30px 32px -->
+      <table class="book-section" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td
+            class="book-label-col"
+            style="padding-top: 20px; padding-bottom: 20px; padding-left: 40px"
+          >
+            Book a Meeting<br />with our experts
+          </td>
+          <td class="book-btns-col" style="padding: 20px 20px">
+            <a href="#" class="btn-eu">EU SALES TEAM</a>
+            <a href="#" class="btn-usa">USA SALES TEAM</a>
+          </td>
+        </tr>
+      </table>
+
+      <!-- FOOTER -->
+      <div class="footer">
+        <p class="closing">We can't wait to meet you soon!</p>
+        <p class="camozzi-text">
+          There are many ways to keep updated about the Camozzi world.<br />
+          Learn more about us:
+        </p>
+        <div class="social-icons">
+          <a href="#" class="social-linkedin" title="LinkedIn">in</a>
+          <a href="#" class="social-spotify" title="Podcast">🎙</a>
+          <a href="#" class="social-youtube" title="YouTube">▶</a>
+        </div>
+        <div class="footer-address">
+          Ingersoll Machine Tools Inc.<br />
+          707, Fulton Avenue<br />
+          Rockford, 61103 Illinois (USA)<br />
+          Tel. : +1 815 9876000<br />
+          <a href="mailto:imtsales@ingersoll.com">imtsales@ingersoll.com</a
+          ><br />
+          <a href="http://www.ingersoll.com" target="_blank"
+            >www.ingersoll.com</a
+          >
+        </div>
+      </div>
+
+      <!-- UNSUBSCRIBE -->
+      <div class="unsub-bar"><a href="#">Unsubscribe</a></div>
+    </div>
+  </body>
+</html>
