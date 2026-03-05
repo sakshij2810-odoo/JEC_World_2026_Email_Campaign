@@ -15,10 +15,17 @@
         font-family: Arial, Helvetica, sans-serif;
         font-size: 14px;
         color: #333;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
       }
       a {
         color: inherit;
         text-decoration: underline;
+      }
+      img {
+        border: 0;
+        outline: none;
+        text-decoration: none;
       }
       .email-wrapper {
         max-width: 600px;
@@ -30,7 +37,6 @@
       .preheader {
         background: #ffffff;
         padding: 8px 16px;
-        display: table;
         width: 100%;
       }
       .preheader td {
@@ -43,7 +49,7 @@
         white-space: nowrap;
       }
 
-      /* FIX 1 — HERO: full-width image, zero gaps */
+      /* HERO */
       .hero {
         line-height: 0;
         font-size: 0;
@@ -119,18 +125,16 @@
         display: block;
       }
 
-      /* FIX 2 — PRODUCT: top-bottom padding on image cell */
+      /* PRODUCT SECTION */
       .product-section {
         background: #ffffff;
-        display: table;
         width: 100%;
         border-collapse: collapse;
       }
       .product-img-col {
-        display: table-cell;
         width: 44%;
         vertical-align: middle;
-        padding: 18px 0 18px 18px; /* top+bottom space around img3 */
+        padding: 18px 0 18px 18px;
       }
       .product-img-col img {
         width: 100%;
@@ -139,17 +143,17 @@
         border-radius: 2px;
       }
       .product-text-col {
-        display: table-cell;
         width: 56%;
-        vertical-align: middle;
+        vertical-align: top;
         padding: 28px 22px;
       }
       .product-text-col .headline {
         font-size: 15px;
         font-weight: 700;
-        color: #444;
+        color: #47577c;
         line-height: 1.4;
         margin-bottom: 18px;
+        text-align: center;
       }
       .product-text-col .headline .highlight {
         color: #e74c3c;
@@ -158,47 +162,48 @@
       .product-text-col .why-title {
         font-size: 14px;
         font-weight: 700;
-        color: #333;
-        margin-bottom: 10px;
+        color: #47577c;
+        margin-bottom: 20px;
+        text-align: center;
       }
       .check-list {
         list-style: none;
         padding: 0;
+        margin: 0;
       }
       .check-list li {
         font-size: 13px;
-        color: #333;
-        margin-bottom: 8px;
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-        line-height: 1.4;
+        color: #47577c;
+        margin-bottom: 10px;
+        padding-left: 24px;
+        position: relative;
+        line-height: 1.5;
       }
       .check-list li .check-icon {
-        flex-shrink: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
       }
 
-      /* FIX 3 — BOOK A MEETING: generous padding */
+      /* BOOK A MEETING */
       .book-section {
         background: #e8e8e8;
-        display: table;
         width: 100%;
         border-collapse: collapse;
       }
       .book-label-col {
-        display: table-cell;
         width: 38%;
         vertical-align: middle;
         font-size: 15px;
         font-weight: 700;
         color: #47577c;
         line-height: 1.5;
-        padding-right: 20px;
+        padding: 20px 20px 20px 40px;
       }
       .book-btns-col {
-        display: table-cell;
         width: 62%;
         vertical-align: middle;
+        padding: 20px;
       }
       .btn-eu {
         display: block;
@@ -294,6 +299,110 @@
       .unsub-bar a {
         color: #888;
       }
+
+      /* RESPONSIVE STYLES */
+      @media only screen and (max-width: 600px) {
+        .email-wrapper {
+          width: 100% !important;
+        }
+
+        .preheader td {
+          display: block !important;
+          width: 100% !important;
+          text-align: center !important;
+          padding: 4px 0 !important;
+        }
+        .preheader td:last-child {
+          text-align: center !important;
+        }
+
+        .last-call {
+          padding: 24px 16px 16px !important;
+        }
+        .last-call h1 {
+          font-size: 26px !important;
+        }
+        .btn-badge {
+          padding: 12px 24px !important;
+          font-size: 12px !important;
+        }
+
+        /* Stack product section */
+        .product-section,
+        .product-section tbody,
+        .product-section tr {
+          display: block !important;
+          width: 100% !important;
+        }
+        .product-img-col,
+        .product-text-col {
+          display: block !important;
+          width: 100% !important;
+          padding: 16px !important;
+        }
+        .product-img-col {
+          text-align: center !important;
+        }
+        .product-img-col img {
+          max-width: 280px !important;
+          margin: 0 auto !important;
+        }
+        .product-text-col .headline {
+          text-align: center !important;
+        }
+        .product-text-col .why-title {
+          text-align: center !important;
+        }
+
+        /* Stack book section */
+        .book-section,
+        .book-section tbody,
+        .book-section tr {
+          display: block !important;
+          width: 100% !important;
+        }
+        .book-label-col,
+        .book-btns-col {
+          display: block !important;
+          width: 100% !important;
+          text-align: center !important;
+          padding: 16px 20px !important;
+        }
+        .book-label-col {
+          padding-bottom: 8px !important;
+        }
+        .book-btns-col {
+          padding-top: 8px !important;
+        }
+
+        .footer {
+          padding: 20px 16px !important;
+        }
+        .footer .camozzi-text br {
+          display: none;
+        }
+      }
+
+      @media only screen and (max-width: 400px) {
+        .last-call h1 {
+          font-size: 22px !important;
+        }
+        .last-call .meet-line,
+        .last-call .date-line,
+        .last-call .city-line {
+          font-size: 13px !important;
+        }
+        .btn-badge {
+          padding: 10px 20px !important;
+          font-size: 11px !important;
+        }
+        .product-text-col .headline {
+          font-size: 14px !important;
+        }
+        .check-list li {
+          font-size: 12px !important;
+        }
+      }
     </style>
   </head>
   <body>
@@ -306,7 +415,7 @@
         </tr>
       </table>
 
-      <!-- FIX 1: HERO — true full-width, no cropping -->
+      <!-- HERO -->
       <div class="hero">
         <img
           src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69a938f5d59ba55504142ebf_1.jpg"
@@ -327,12 +436,12 @@
       <!-- MAP IMAGE -->
       <div class="map-section">
         <img
-          src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69a938f57cab85fd317e192b_2.jpg"
+          src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69a941c22f96c48120aee9cf_map%20layout%20addcomposites.png"
           alt="JEC World 2026 Hall Map — Hall 6 Booth Q72"
         />
       </div>
 
-      <!-- FIX 2: PRODUCT — img3 has 18px top+bottom padding in its cell -->
+      <!-- PRODUCT SECTION -->
       <table
         class="product-section"
         cellpadding="0"
@@ -342,23 +451,25 @@
         <tr>
           <td class="product-img-col">
             <img
-              src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69a938f5feb04d614bed349b_3.jpg"
+              src="https://cdn.prod.website-files.com/65d8589d1d07ae7c06b4b253/69a942739ace574c741e6192_second%20placeholder.png"
               alt="Ingersoll Orion composite manufacturing system"
             />
           </td>
           <td class="product-text-col">
             <p class="headline">
-              Our <span class="highlight">ALL-IN-ONE</span> solutions cover the
-              full <strong>COMPOSITE MANUFACTURING</strong> process
+              Our <span class="highlight">ALL-IN-ONE</span> solutions<br />
+              cover the full
+              <strong>COMPOSITE<br />MANUFACTURING</strong> process
             </p>
             <p class="why-title"><span>📌</span> Why visit us?</p>
             <ul class="check-list">
-              <li><span class="check-icon">✅</span> Exclusive live demos</li>
+              <li><span class="check-icon">✅</span>Exclusive live demos</li>
               <li>
-                <span class="check-icon">✅</span> 1to1 Meeting with our sales
+                <span class="check-icon">✅</span>1-to-1 Meeting with our sales
+                team
               </li>
               <li>
-                <span class="check-icon">✅</span> See our
+                <span class="check-icon">✅</span>See our
                 <strong>ALL-IN-ONE Technologies</strong> in action and explore
                 tailored solutions
               </li>
@@ -367,16 +478,11 @@
         </tr>
       </table>
 
-      <!-- FIX 3: BOOK A MEETING — padding: 30px 32px -->
+      <!-- BOOK A MEETING -->
       <table class="book-section" cellpadding="0" cellspacing="0" width="100%">
         <tr>
-          <td
-            class="book-label-col"
-            style="padding-top: 20px; padding-bottom: 20px; padding-left: 40px"
-          >
-            Book a Meeting<br />with our experts
-          </td>
-          <td class="book-btns-col" style="padding: 20px 20px">
+          <td class="book-label-col">Book a Meeting<br />with our experts</td>
+          <td class="book-btns-col">
             <a href="#" class="btn-eu">EU SALES TEAM</a>
             <a href="#" class="btn-usa">USA SALES TEAM</a>
           </td>
